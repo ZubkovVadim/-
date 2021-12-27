@@ -18,12 +18,22 @@ class RootViewController: UINavigationController {
     }
 }
 
+protocol Identifible {
+    static var identifier: String { get }
+}
+
+extension UITableViewCell: Identifible {
+    static var identifier: String {
+        String(describing: self)
+    }
+}
+
 extension UITableView {
-    func register<T>(cell: T.Type) where T: UITableViewCell {
-        register(cell, forCellReuseIdentifier: "\(cell)")
+    func register<T: UITableViewCell>(cell: T.Type) {
+        register(T.self, forCellReuseIdentifier: cell.identifier)
     }
 
-    func dequeueReusableCell<T: UITableViewCell>(for indexPath: IndexPath) -> T {
-        return dequeueReusableCell(withIdentifier: "\(T.self)", for: indexPath) as! T
+    func dequeueReusableCell<T>(for indexPath: IndexPath) -> T where T: Identifible {
+        dequeueReusableCell(withIdentifier: T.identifier, for: indexPath) as! T
     }
 }

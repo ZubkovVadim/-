@@ -124,8 +124,7 @@ extension DocumentsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ImageViewCell", for: indexPath) as! ImageViewCell
-        
+        let cell: ImageViewCell = tableView.dequeueReusableCell(for: indexPath)
         let url = dataSource[indexPath.row]
         let viewModel = ImageViewCellViewModel(imageUrl: url)
         
