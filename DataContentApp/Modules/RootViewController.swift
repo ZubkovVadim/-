@@ -18,7 +18,7 @@ class RootViewController: UINavigationController {
     }
 }
 
-protocol Identifible {
+protocol Identifible: UITableViewCell {
     static var identifier: String { get }
 }
 
@@ -33,7 +33,7 @@ extension UITableView {
         register(T.self, forCellReuseIdentifier: cell.identifier)
     }
 
-    func dequeueReusableCell<T>(for indexPath: IndexPath) -> T where T: Identifible {
-        dequeueReusableCell(withIdentifier: T.identifier, for: indexPath) as! T
+    func dequeueReusableCell<T>(_ type: T.Type, for indexPath: IndexPath) -> T where T: Identifible {
+        dequeueReusableCell(withIdentifier: type.identifier, for: indexPath) as! T
     }
 }

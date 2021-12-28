@@ -23,6 +23,8 @@ class DocumentsViewController: UIViewController {
     private lazy var documentDirectory: URL? = {
         FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
     }()
+
+    private let userDefaultsManager = UserDefaultsManager()
     
     override func loadView() {
         super.loadView()
@@ -37,8 +39,8 @@ class DocumentsViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewAction))
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         reloadData()
     }
     
@@ -63,7 +65,17 @@ class DocumentsViewController: UIViewController {
         do {
             let list = try fileManager.contentsOfDirectory(at: documents, includingPropertiesForKeys: nil)
             
-            dataSource = list.filter { $0.pathExtension == "jpeg" }
+            dataSource = list
+                .filter { $0.pathExtension == "jpeg" }
+                .sorted(by: { url1, url2 in
+                    switch userDefaultsManager.getSortState() {
+                    case .az:
+                        return url1.absoluteString < url2.absoluteString
+                    case .za:
+                        return url1.absoluteString > url2.absoluteString
+                    }
+                })
+            
         } catch {
             print("error get documents", error.localizedDescription)
         }
@@ -75,7 +87,7 @@ class DocumentsViewController: UIViewController {
             return
         }
         
-        let name = UUID().uuidString
+        let name = "\(Date().timeIntervalSince1970)"
         // Application/Documents/{name}
         let url = documents
             .appendingPathComponent(name)
@@ -124,7 +136,7 @@ extension DocumentsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: ImageViewCell = tableView.dequeueReusableCell(for: indexPath)
+        let cell = tableView.dequeueReusableCell(ImageViewCell.self, for: indexPath)
         let url = dataSource[indexPath.row]
         let viewModel = ImageViewCellViewModel(imageUrl: url)
         

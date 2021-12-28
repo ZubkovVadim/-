@@ -9,25 +9,32 @@
 /* Begin PBXBuildFile section */
 		EF548CCE277A087F00E553CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF548CCD277A087F00E553CA /* AppDelegate.swift */; };
 		EF548CD0277A087F00E553CA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF548CCF277A087F00E553CA /* SceneDelegate.swift */; };
-		EF548CD2277A087F00E553CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF548CD1277A087F00E553CA /* ViewController.swift */; };
+		EF548CD2277A087F00E553CA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF548CD1277A087F00E553CA /* LoginViewController.swift */; };
 		EF548CD7277A088100E553CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF548CD6277A088100E553CA /* Assets.xcassets */; };
 		EF548CDA277A088100E553CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF548CD8277A088100E553CA /* LaunchScreen.storyboard */; };
 		EF548CE2277A08D700E553CA /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF548CE1277A08D700E553CA /* RootViewController.swift */; };
 		EF548CE7277A096F00E553CA /* ImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF548CE6277A096F00E553CA /* ImageViewCell.swift */; };
 		EF548CE9277A11FB00E553CA /* DocumentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF548CE8277A11FB00E553CA /* DocumentsViewController.swift */; };
+		EFB562D9277B596C003CB4DF /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB562D8277B596C003CB4DF /* TabBarViewController.swift */; };
+		EFB562DC277B59F3003CB4DF /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = EFB562DB277B59F3003CB4DF /* KeychainAccess */; };
+		EFB562DF277B5DEB003CB4DF /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB562DE277B5DEB003CB4DF /* KeychainManager.swift */; };
+		EFB562E1277B66BB003CB4DF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB562E0277B66BB003CB4DF /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EF548CCA277A087F00E553CA /* DataContentApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataContentApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF548CCD277A087F00E553CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF548CCF277A087F00E553CA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EF548CD1277A087F00E553CA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EF548CD1277A087F00E553CA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		EF548CD6277A088100E553CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF548CD9277A088100E553CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF548CDB277A088100E553CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF548CE1277A08D700E553CA /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		EF548CE6277A096F00E553CA /* ImageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewCell.swift; sourceTree = "<group>"; };
 		EF548CE8277A11FB00E553CA /* DocumentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsViewController.swift; sourceTree = "<group>"; };
+		EFB562D8277B596C003CB4DF /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		EFB562DE277B5DEB003CB4DF /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		EFB562E0277B66BB003CB4DF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFB562DC277B59F3003CB4DF /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +68,7 @@
 		EF548CCC277A087F00E553CA /* DataContentApp */ = {
 			isa = PBXGroup;
 			children = (
+				EFB562DD277B5DE1003CB4DF /* Managers */,
 				EF548CE3277A094900E553CA /* Modules */,
 				EF548CCD277A087F00E553CA /* AppDelegate.swift */,
 				EF548CCF277A087F00E553CA /* SceneDelegate.swift */,
@@ -75,7 +84,9 @@
 			children = (
 				EF548CE4277A095E00E553CA /* Root */,
 				EF548CE1277A08D700E553CA /* RootViewController.swift */,
-				EF548CD1277A087F00E553CA /* ViewController.swift */,
+				EF548CD1277A087F00E553CA /* LoginViewController.swift */,
+				EFB562D8277B596C003CB4DF /* TabBarViewController.swift */,
+				EFB562E0277B66BB003CB4DF /* SettingsViewController.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -97,6 +108,14 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		EFB562DD277B5DE1003CB4DF /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				EFB562DE277B5DEB003CB4DF /* KeychainManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -113,6 +132,9 @@
 			dependencies = (
 			);
 			name = DataContentApp;
+			packageProductDependencies = (
+				EFB562DB277B59F3003CB4DF /* KeychainAccess */,
+			);
 			productName = DataContentApp;
 			productReference = EF548CCA277A087F00E553CA /* DataContentApp.app */;
 			productType = "com.apple.product-type.application";
@@ -141,6 +163,9 @@
 				Base,
 			);
 			mainGroup = EF548CC1277A087F00E553CA;
+			packageReferences = (
+				EFB562DA277B59F3003CB4DF /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+			);
 			productRefGroup = EF548CCB277A087F00E553CA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -167,12 +192,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF548CD2277A087F00E553CA /* ViewController.swift in Sources */,
+				EF548CD2277A087F00E553CA /* LoginViewController.swift in Sources */,
 				EF548CCE277A087F00E553CA /* AppDelegate.swift in Sources */,
 				EF548CE2277A08D700E553CA /* RootViewController.swift in Sources */,
 				EF548CE9277A11FB00E553CA /* DocumentsViewController.swift in Sources */,
+				EFB562D9277B596C003CB4DF /* TabBarViewController.swift in Sources */,
 				EF548CE7277A096F00E553CA /* ImageViewCell.swift in Sources */,
 				EF548CD0277A087F00E553CA /* SceneDelegate.swift in Sources */,
+				EFB562DF277B5DEB003CB4DF /* KeychainManager.swift in Sources */,
+				EFB562E1277B66BB003CB4DF /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +410,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EFB562DA277B59F3003CB4DF /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EFB562DB277B59F3003CB4DF /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EFB562DA277B59F3003CB4DF /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EF548CC2277A087F00E553CA /* Project object */;
 }
